@@ -1,5 +1,6 @@
 import "../styles/Auth.css";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "../../../assets/MegaMart-logo.svg";
 import AuthInput from "../components/AuthInput";
 import AuthButton from "../components/AuthButton";
@@ -77,8 +78,11 @@ function Login() {
 
             <AuthButton type="submit">Login</AuthButton>
           </form>
-          <p className="signup-text">
-            Don’t have an account? <a href="#">Sign up</a>
+          <p className="auth-signup-text">
+            Don’t have an account?
+            <Link to="/signup" className="signup-text">
+              Sign up
+            </Link>
           </p>
           <div className="login-divider">
             <p>Or login with</p>

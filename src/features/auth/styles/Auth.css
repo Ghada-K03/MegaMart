@@ -98,17 +98,19 @@ body {
   cursor: pointer;
   font-size: 16px;
 }
-.signup-text {
+.auth-signup-text {
   display: flex;
   justify-content: center;
   text-align: center;
+  gap: 4px;
 }
-.signup-text a,
+.signup-text,
 .login-options a {
   color: #ff8682;
   text-decoration: none;
+  display: inline;
 }
-.signup-text a:hover,
+.signup-text:hover,
 .login-options a:hover {
   color: #f10606;
   text-decoration: underline;
@@ -188,61 +190,26 @@ body {
     margin-top: 56px;
   }
 }
-
-/*
-@media (max-width: 480px) {
-  .login-page {
-    padding: 24px 16px;
+.signup-row {
+  width: 100%;
+  display: flex;
+  gap: 18px;
+}
+.signup-row .auth-field {
+  flex: 1;
+}
+.signup-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.signup-checkbox input {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+@media (max-width: 600px) {
+  .signup-row {
+    flex-direction: column;
   }
-
-  .login-logo {
-    width: 120px;
-  }
-
-  .login-heading h1 {
-    font-size: 28px;
-  }
-
-  .login-heading p {
-    font-size: 14px;
-  }
-
-  .login-form {
-    margin-top: 48px;
-  }
-
-  .auth-input {
-    height: 52px;
-    font-size: 14px;
-  }
-
-  .auth-label {
-    font-size: 12px;
-  }
-
-  .login-options {
-    font-size: 13px;
-  }
-
-  .auth-button {
-    height: 46px;
-  }
-
-  .signup-text,
-  .login-divider p {
-    font-size: 13px;
-  }
-
-  .social-icons-login {
-    gap: 8px;
-  }
-
-  .social-button {
-    height: 52px;
-  }
-
-  .social-button svg {
-    width: 22px;
-    height: 22px;
-  }
-} */
+}
