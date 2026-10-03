@@ -10,9 +10,9 @@ body {
 }
 .login-page {
   width: 100%;
-  min-height: 100vh;
+  max-height: 100vh;
   background-color: #fff;
-  padding: 50px 0 6px;
+  padding: 55px 0 6px;
 }
 .login-card {
   width: 100%;
@@ -29,10 +29,6 @@ body {
   width: 100%;
   max-width: 500px;
   margin: 20px auto 0;
-  /* display: flex;
-  flex-direction: column;
-  gap: 79px;
-  */
 }
 .login-form {
   margin-top: 40px;
@@ -77,6 +73,9 @@ body {
   font-size: 16px;
   font-weight: 400;
 }
+.auth-input-password {
+  padding-right: 44px;
+}
 .login-options {
   width: 100%;
   display: flex;
@@ -103,6 +102,7 @@ body {
   justify-content: center;
   text-align: center;
   gap: 4px;
+  margin-top: 5px;
 }
 .signup-text,
 .login-options a {
@@ -123,6 +123,30 @@ body {
   color: #d32f2f;
   font-size: 13px;
   font-weight: 400;
+}
+.auth-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  color: #1c1b1f;
+  cursor: pointer;
+}
+.password-toggle svg {
+  width: 18px;
+  height: 18px;
 }
 .login-divider {
   width: 100%;
@@ -154,7 +178,7 @@ body {
 }
 .social-button {
   flex: 1;
-  height: 56px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -187,8 +211,15 @@ body {
   }
 
   .login-form {
-    margin-top: 56px;
+    margin-top: 50px;
   }
+}
+.signup-page {
+  padding-top: 10px;
+}
+.signup-form {
+  margin-top: 25px;
+  gap: 20px;
 }
 .signup-row {
   width: 100%;
@@ -208,7 +239,17 @@ body {
   height: 16px;
   cursor: pointer;
 }
+.social-icons-signup {
+  margin-top: 0;
+}
+.signup-divider {
+  margin-top: 0;
+}
 @media (max-width: 600px) {
+  .login-page .login-content {
+    padding-bottom: 30px;
+  }
+
   .signup-row {
     flex-direction: column;
   }

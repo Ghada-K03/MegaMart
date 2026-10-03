@@ -69,7 +69,7 @@ function SignUp() {
     console.log("Sign up data:", formData);
   }
   return (
-    <main className="login-page">
+    <main className="login-page signup-page">
       <section className="login-card">
         <img src={logo} className="login-logo" alt="MegaMart" />
         <div className="login-content">
@@ -79,7 +79,11 @@ function SignUp() {
               Let’s get you all st up so you can access your personal account.
             </p>
           </div>
-          <form className="login-form" onSubmit={handleSubmit} noValidate>
+          <form
+            className="login-form signup-form"
+            onSubmit={handleSubmit}
+            noValidate
+          >
             <div className="signup-row">
               <AuthInput
                 id="firstName"
@@ -127,7 +131,7 @@ function SignUp() {
               label="Password"
               type="password"
               name="password"
-              placeholder="......"
+              placeholder="Enter Your Password"
               value={formData.password}
               onChange={handleChange}
               error={errors.password}
@@ -137,7 +141,7 @@ function SignUp() {
               label="Confirm Password"
               type="password"
               name="confirmPassword"
-              placeholder="......"
+              placeholder="Enter Your Password"
               value={formData.confirmPassword}
               onChange={handleChange}
               error={errors.confirmPassword}
@@ -149,26 +153,34 @@ function SignUp() {
                 onChange={(event) => setAgreed(event.target.checked)}
               />
               <span>
-                I agree to all <a href="#"> Terms and Conditions</a> and{" "}
-                <a href="#"> Privacy Policy</a>
+                I agree to all{" "}
+                <a href="#" className="signup-text">
+                  {" "}
+                  Terms and Conditions
+                </a>{" "}
+                and{" "}
+                <a href="#" className="signup-text">
+                  {" "}
+                  Privacy Policy
+                </a>
               </span>
             </label>
             <AuthButton type="submit" disabled={!agreed}>
               Create Account
             </AuthButton>
 
-            <p className="signup-text">
+            <p className="auth-signup-text">
               Already have an account?{" "}
-              <Link to="/login" className="auth-link">
+              <Link to="/login" className="signup-text">
                 Login
               </Link>
             </p>
 
-            <div className="login-divider">
+            <div className="login-divider signup-divider">
               <p>Or sign up with</p>
             </div>
 
-            <div className="social-icons-login">
+            <div className="social-icons-login social-icons-signup">
               <button
                 type="button"
                 className="social-button"
