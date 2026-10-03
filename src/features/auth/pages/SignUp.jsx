@@ -1,4 +1,5 @@
 import { useState } from "react";
+import useForm from "../hooks/useForm";
 import { Link } from "react-router-dom";
 import logo from "../../../assets/MegaMart-logo.svg";
 import AuthInput from "../components/AuthInput";
@@ -6,7 +7,19 @@ import AuthButton from "../components/AuthButton";
 import { FaFacebook, FaApple } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 function SignUp() {
-  const [formData, setFormData] = useState({
+  // const [formData, setFormData] = useState({
+  //   firstName: "",
+  //   lastName: "",
+  //   email: "",
+  //   phone: "",
+  //   password: "",
+  //   confirmPassword: "",
+  // });
+  // function handleChange(event) {
+  //   const { name, value } = event.target;
+  //   setFormData((prev) => ({ ...prev, [name]: value }));
+  // }
+  const { formData, handleChange } = useForm({
     firstName: "",
     lastName: "",
     email: "",
@@ -16,10 +29,6 @@ function SignUp() {
   });
   const [errors, setErrors] = useState({});
   const [agreed, setAgreed] = useState(false);
-  function handleChange(event) {
-    const { name, value } = event.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  }
 
   function validateForm() {
     const newErrors = {};
@@ -72,7 +81,7 @@ function SignUp() {
     <main className="login-page signup-page">
       <section className="login-card">
         <img src={logo} className="login-logo" alt="MegaMart" />
-        <div className="login-content">
+        <div className="login-content signup-content">
           <div className="login-heading">
             <h1>Sign Up</h1>
             <p>

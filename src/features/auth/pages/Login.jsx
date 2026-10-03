@@ -1,5 +1,6 @@
 import "../styles/Auth.css";
 import { useState } from "react";
+import useForm from "../hooks/useForm";
 import { Link } from "react-router-dom";
 import logo from "../../../assets/MegaMart-logo.svg";
 import AuthInput from "../components/AuthInput";
@@ -7,12 +8,13 @@ import AuthButton from "../components/AuthButton";
 import { FaFacebook, FaApple } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 function Login() {
-  const [formData, setFormData] = useState({ email: "", password: "" });
+  // const [formData, setFormData] = useState({ email: "", password: "" });
+  // function handleChange(event) {
+  //   const { name, value } = event.target;
+  //   setFormData((prev) => ({ ...prev, [name]: value }));
+  // }
+  const { formData, handleChange } = useForm({ email: "", password: "" });
   const [errors, setErrors] = useState({});
-  function handleChange(event) {
-    const { name, value } = event.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  }
   function validateForm() {
     const newErrors = {};
     if (!formData.email.trim()) {
