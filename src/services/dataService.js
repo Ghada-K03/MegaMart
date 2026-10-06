@@ -16,3 +16,7 @@ export async function getCategories() {
   const result = await apiRequest("/categories");
   return [...result.data].sort((a, b) => a.sort_order - b.sort_order);
 }
+export async function getProducts() {
+  const result = await apiRequest("/products");
+  return result.data;
+}
